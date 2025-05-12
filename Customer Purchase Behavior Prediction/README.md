@@ -54,7 +54,7 @@ Quanto às métricas de desempenho, o modelo obteve Accuracy de 85,14%, Precisio
 ## Referências
 
 - [Kaggle - Predict Customer Purchase Behavior](https://www.kaggle.com/datasets/rabieelkharoua/predict-customer-purchase-behavior-dataset/data)
-- 
+- Repositório do Prof Dr. Ivanovitch [Link](https://github.com/ivanovitchm/PPGEEC2318)
 
  
 
