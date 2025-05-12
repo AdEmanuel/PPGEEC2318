@@ -5,7 +5,7 @@ Bem-vindo ao repositório dedicado à disciplina de Aprendizado de Máquina, par
 Este repositório reúne projetos, estudos e materiais desenvolvidos ao longo do curso, com o objetivo de aprofundar o conhecimento em técnicas e aplicações de Inteligência Artificial.
 
 ## 📒 Projetos
-- [Projeto 1](https://github.com/AdEmanuel/PPGEEC2318/tree/main/Customer%20Purchase%20Behavior%20Prediction)
+- [Projeto 1 - Customer Purchase Behavior Prediction](https://github.com/AdEmanuel/PPGEEC2318/tree/main/Customer%20Purchase%20Behavior%20Prediction)
 
 ## 📚 Referências
 - Repositório do Prof Dr. Ivanovitch [Link](https://github.com/ivanovitchm/PPGEEC2318)
