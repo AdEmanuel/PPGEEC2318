@@ -49,9 +49,28 @@ A classe _Architecture_ foi responsável por gerenciar todo o ciclo de treinamen
 
 ### 📊 4. Função de Perda (Loss Function) e Métricas de Desempenho
 
-A curva de perda evidencia uma boa convergência ao longo das 100 épocas e sem ocorrência de overfitting relevante, dado que as curvas de treino e validação permanecem próximas.
+A curva de perda evidencia uma boa convergência ao longo das 100 épocas, com ambas as curvas — de treino e de validação — apresentando tendência de estabilização após aproximadamente 20 iterações. A proximidade entre as curvas sugere que não houve overfitting relevante, indicando um bom equilíbrio entre aprendizado e generalização.
 
-Quanto às métricas de desempenho, o modelo obteve Accuracy de 85,14%, Precision de 85,86%, Recall de 81,73% e F1-Score de 83,74%, indicando um bom equilíbrio entre _precision_ e _sensitivity_. A área sob a curva ROC (AUC = 0.8970) e o formato da curva Precision-Recall também demonstram boa capacidade discriminativa do classificador.
+Quanto às métricas de desempenho, o modelo apresentou resultados satisfatórios para uma tarefa de classificação binária:
+
+|  Métrica     | Valor   |
+|--------------|---------|
+| **Accuracy** | 85,14%  |
+| **Precision**| 85,86%  |
+| **Recall**   | 81,73%  |
+| **F1-Score** | 83,74%  |
+
+Esses indicadores refletem uma boa performance do modelo, o que é corroborado pela análise da matriz de confusão:
+<p align="center"> <img src="confusion_matrix.png" alt="Matriz de Confusão" width="450"> </p>
+Obesrva-se um bom número de classificações corretas em relação às incorretas. Isso demonstra que o modelo é eficaz tanto em identificar corretamente se o indivíduo irá realizar uma compra (classe Purchase) quanto em evitar alarmes falsos (classe No Purchase).
+
+Esses resultados são ainda complementados pela curva ROC, cuja área sob a curva (AUC = 0.8970) evidencia uma boa capacidade discriminativa, com a proximidade ao canto superior esquerdo do gráfico representando uma alta taxa de verdadeiros positivos com uma baixa taxa de falsos positivos:
+
+<p align="center"> <img src="ROC_curve.png" alt="Curva ROC" width="450"> </p>
+
+Já a curva Precision-Recall mostra que o modelo mantém, em grande parte, uma precisão consistente mesmo com o aumento do recall, o que é relevante em contextos com possível desbalanceamento entre as classes:
+
+<p align="center"> <img src="precision_recall_curve.png" alt="Curva Precision-Recall" width="450"> </p>
 
 ## Referências
 
