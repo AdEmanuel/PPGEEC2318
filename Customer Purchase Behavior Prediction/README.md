@@ -52,9 +52,11 @@ Além disso, ela oferece suporte para salvar e recuperar o estado do modelo — 
 
 No presente projeto, a classe foi utilizada para treinar o classificador ao longo de 100 épocas. A cada época, o modelo era avaliado tanto nos dados de treino quanto nos dados de validação, possibilitando o monitoramento contínuo da aprendizagem e a mitigação de overfitting.
 
-### 📊 4. Função de Perda (Loss Function) e Métricas de Desempenho
+### 📊 4. Curva de Perda (Loss Curve) e Métricas de Desempenho
 
 A curva de perda evidencia uma boa convergência ao longo das 100 épocas, com ambas as curvas — de treino e de validação — apresentando tendência de estabilização após aproximadamente 20 iterações. A proximidade entre as curvas sugere que não houve overfitting relevante, indicando um bom equilíbrio entre aprendizado e generalização.
+
+<p align="center"> <img src="plot_losses.png" alt="Curvas de perdas" width="450"> </p>
 
 Quanto às métricas de desempenho, o modelo apresentou resultados satisfatórios para uma tarefa de classificação binária:
 
