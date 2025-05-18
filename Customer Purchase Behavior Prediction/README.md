@@ -45,7 +45,11 @@ O modelo treinado é uma rede neural simples configurada para tarefa de classifi
 
 *3.3 Training Framework*
 
-A classe _Architecture_ foi responsável por gerenciar todo o ciclo de treinamento, validação e checkpointing. Ela centraliza as operações de propagação direta, retropropagação, atualização dos pesos e cálculo das métricas, operando diretamente sobre tensores e garantindo compatibilidade com GPU. A função train() foi executada por 100 épocas.
+A classe 'Architecture' foi projetada para gerenciar de forma abrangente todas as etapas do processo de treinamento de modelos, incluindo a validação e o mecanismo de checkpointing. Ela encapsula as operações de propagação direta, retropropagação, atualização dos pesos e cálculo das métricas de desempenho, trabalhando diretamente com tensores e garantindo compatibilidade com execução em GPU.
+
+Além disso, ela oferece suporte para salvar e recuperar o estado do modelo — incluindo os weights e os parâmetros do otimizador —, o que é fundamental para garantir a reprodutibilidade dos resultados, permitir a retomada de treinamentos interrompidos e facilitar a posterior implantação do modelo treinado. 
+
+No presente projeto, a classe foi utilizada para treinar o classificador ao longo de 100 épocas. A cada época, o modelo era avaliado tanto nos dados de treino quanto nos dados de validação, possibilitando o monitoramento contínuo da aprendizagem e a mitigação de overfitting.
 
 ### 📊 4. Função de Perda (Loss Function) e Métricas de Desempenho
 
