@@ -89,6 +89,7 @@ De forma geral, todo o fluxo — desde a definição da arquitetura até o trein
 
 ## 🔗 Referências
 
+- [Repositório da Pei-Tong - Customer-Purchase-Predict_ML](https://github.com/Pei-Tong/Customer-Purchase-Predict_ML)
 - [Kaggle - Predict Customer Purchase Behavior](https://www.kaggle.com/datasets/rabieelkharoua/predict-customer-purchase-behavior-dataset/data)
 - [Repositório do Prof Dr. Ivanovitch](https://github.com/ivanovitchm/PPGEEC2318)
 
