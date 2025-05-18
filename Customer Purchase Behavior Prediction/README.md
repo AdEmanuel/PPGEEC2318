@@ -25,7 +25,7 @@ O modelo tem como objetivo ajudar as empresas a entender o comportamento do clie
 O arquivo referente a etapa da EDA pode ser visto aqui: [eda.ipynb](https://github.com/AdEmanuel/PPGEEC2318/blob/main/Customer%20Purchase%20Behavior%20Prediction/eda.ipynb), ao passo que o arquivo 
 contendo os passos descritos nas etapas 2, 3 e 4 é o [purchase_classifier.ipynb](https://github.com/AdEmanuel/PPGEEC2318/blob/main/Customer%20Purchase%20Behavior%20Prediction/purchase_classifier.ipynb).
 
-### 1. Exploratory Data Analysis (EDA)
+### 📈 1. Exploratory Data Analysis (EDA)
 Durante a etapa de Análise Exploratória dos Dados, observou-se que a variável-alvo (_Purchase Status_) apresenta um desbalanceamento entre as classes, o que poderá influenciar negativamente o desempenho do modelo se não for tratado adequadamente. Além disso, verificou-se que as variáveis _Loyalty Program_ e _Discounts Availed_ demonstram maior correlação com a variável de saída, indicando um impacto maior que as outras no comportamento de compra dos clientes.
 
 No que diz respeito às variáveis numéricas, foi identificado que estas operam em escalas bastante distintas — por exemplo, a variável _Annual Income_ varia aproximadamente entre 20.000 e 150.000, enquanto _Age_ apresenta valores entre 18 e 70. Já entre as variáveis categóricas, a maioria apresenta duas categorias, com exceção da variável _Product Category_, que contém 5 classes distintas. Tais característica tornam necessário o emprego de técnicas de normalização dos dados e codificação categórica.
@@ -80,6 +80,8 @@ Esses resultados são ainda complementados pela curva ROC, cuja área sob a curv
 Já a curva Precision-Recall mostra que o modelo mantém, em grande parte, uma precisão consistente mesmo com o aumento do recall, o que é relevante em contextos com possível desbalanceamento entre as classes:
 
 <p align="center"> <img src="precision_recall_curve.png" alt="Curva Precision-Recall" width="450"> </p>
+
+De forma geral, todo o fluxo — desde a definição da arquitetura até o treinamento e avaliação — foi estruturado com foco em modularidade, reprodutibilidade e facilidade de reaproveitamento.
 
 ## Referências
 
