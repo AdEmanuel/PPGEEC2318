@@ -65,8 +65,10 @@ Quanto às métricas de desempenho, o modelo apresentou resultados satisfatório
 | **F1-Score** | 83,74%  |
 
 Esses indicadores refletem uma boa performance do modelo, o que é corroborado pela análise da matriz de confusão:
+
 <p align="center"> <img src="confusion_matrix.png" alt="Matriz de Confusão" width="450"> </p>
-Obesrva-se um bom número de classificações corretas em relação às incorretas. Isso demonstra que o modelo é eficaz tanto em identificar corretamente se o indivíduo irá realizar uma compra (classe _Purchase_) quanto em evitar alarmes falsos (classe _No Purchase_).
+
+Obesrva-se um bom número de classificações corretas em relação às incorretas. Isso demonstra que o modelo é eficaz tanto em identificar corretamente se o indivíduo irá realizar uma compra (classe _Purchase_ ) quanto em evitar alarmes falsos (classe _No Purchase_).
 
 Esses resultados são ainda complementados pela curva ROC, cuja área sob a curva (AUC = 0.8970) evidencia uma boa capacidade discriminativa, com a proximidade ao canto superior esquerdo do gráfico representando uma alta taxa de verdadeiros positivos com uma baixa taxa de falsos positivos:
 
