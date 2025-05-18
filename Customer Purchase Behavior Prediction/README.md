@@ -9,15 +9,16 @@ O modelo tem como objetivo ajudar as empresas a entender o comportamento do clie
 ## 📂 Dataset
 - Fonte: [Kaggle - Predict Customer Purchase Behavior](https://www.kaggle.com/datasets/rabieelkharoua/predict-customer-purchase-behavior-dataset/data)
 - Características:
-  - Age;
-  - Gender;
-  - Annual Income;
-  - Number of Purchases;
-  - Product Category;
-  - Time Spent on Website;
-  - Loyalty Program;
-  - Discounts Availed;
-- Variável Alvo 🎯: Purchase Status
+  - Age: idade do cliente;
+  - Gender: gênero do cliente (0: masculino, 1: feminino)
+  - Annual Income: renda anual do cliente em dólares
+  - Number of Purchases: número total de compras feitas pelo cliente
+  - Product Category: categoria do produto comprado (0: Eletrônicos, 1: Roupas, 2: Artigos para o lar, 3: Beleza, 4: Esportes)
+  - Time Spent on Website: tempo gasto pelo cliente no site em minutos
+  - Loyalty Program: se o cliente é membro do programa de fidelidade (0: Não, 1: Sim)
+  - Discounts Availed: número de descontos aproveitados pelo cliente (intervalo: 0-5)
+- Variável Alvo 🎯:
+  - Purchase Status: probabilidade de o cliente fazer uma compra (0: Não, 1: Sim)
 
 ## 🛠️ Project Pipeline
 
