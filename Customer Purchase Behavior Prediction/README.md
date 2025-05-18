@@ -56,7 +56,7 @@ No presente projeto, a classe foi utilizada para treinar o classificador ao long
 
 A curva de perda evidencia uma boa convergência ao longo das 100 épocas, com ambas as curvas — de treino e de validação — apresentando tendência de estabilização após aproximadamente 20 iterações. A proximidade entre as curvas sugere que não houve overfitting relevante, indicando um bom equilíbrio entre aprendizado e generalização.
 
-<p align="center"> <img src="plot_losses.png" alt="Curvas de perdas" width="450"> </p>
+<p align="center"> <img src="plot_losses.png" alt="Curvas de perdas" width="550"> </p>
 
 Quanto às métricas de desempenho, o modelo apresentou resultados satisfatórios para uma tarefa de classificação binária:
 
