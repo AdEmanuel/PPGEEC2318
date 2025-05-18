@@ -22,7 +22,7 @@ O modelo tem como objetivo ajudar as empresas a entender o comportamento do clie
 ## 🛠️ Project Pipeline
 
 O arquivo referente a etapa da EDA pode ser visto aqui: [eda.ipynb](https://github.com/AdEmanuel/PPGEEC2318/blob/main/Customer%20Purchase%20Behavior%20Prediction/eda.ipynb), ao passo que o arquivo 
-contendo os passos descritos nas etapas 2, 3 e 4 é o [purchase_classifier](https://github.com/AdEmanuel/PPGEEC2318/blob/main/Customer%20Purchase%20Behavior%20Prediction/purchase_classifier.ipynb).
+contendo os passos descritos nas etapas 2, 3 e 4 é o [purchase_classifier.ipynb](https://github.com/AdEmanuel/PPGEEC2318/blob/main/Customer%20Purchase%20Behavior%20Prediction/purchase_classifier.ipynb).
 
 ### 1. Exploratory Data Analysis (EDA)
 Durante a etapa de Análise Exploratória dos Dados, observou-se que a variável-alvo (_Purchase Status_) apresenta um desbalanceamento entre as classes, o que poderá influenciar negativamente o desempenho do modelo se não for tratado adequadamente. Além disso, verificou-se que as variáveis _Loyalty Program_ e _Discounts Availed_ demonstram maior correlação com a variável de saída, indicando um impacto maior que as outras no comportamento de compra dos clientes.
@@ -45,7 +45,7 @@ O modelo treinado é uma rede neural simples configurada para tarefa de classifi
 
 *3.3 Training Framework*
 
-A classe 'Architecture' foi projetada para gerenciar de forma abrangente todas as etapas do processo de treinamento de modelos, incluindo a validação e o mecanismo de checkpointing. Ela encapsula as operações de propagação direta, retropropagação, atualização dos pesos e cálculo das métricas de desempenho, trabalhando diretamente com tensores e garantindo compatibilidade com execução em GPU.
+A classe `Architecture` foi projetada para gerenciar de forma abrangente todas as etapas do processo de treinamento de modelos, incluindo a validação e o mecanismo de checkpointing. Ela encapsula as operações de propagação direta, retropropagação, atualização dos pesos e cálculo das métricas de desempenho, trabalhando diretamente com tensores e garantindo compatibilidade com execução em GPU.
 
 Além disso, ela oferece suporte para salvar e recuperar o estado do modelo — incluindo os weights e os parâmetros do otimizador —, o que é fundamental para garantir a reprodutibilidade dos resultados, permitir a retomada de treinamentos interrompidos e facilitar a posterior implantação do modelo treinado. 
 
