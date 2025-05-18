@@ -2,9 +2,13 @@
 
 ## 📌 Visão Geral
 
-Este projeto apresenta um modelo de aprendizado de máquina criado no PyTorch para prever a probabilidade de um cliente fazer uma compra, com base em características demográficas e comportamentais. Ele aborda um problema de classificação binária usando um conjunto de dados disponível publicamente no Kaggle.
+Este projeto propõe uma solução de aprendizado de máquina, desenvolvida em PyTorch, para prever a probabilidade de um cliente realizar uma compra com base em características demográficas e comportamentais. Trata-se de um problema de classificação binária, utilizando um conjunto de dados público disponível no Kaggle.
 
-O modelo tem como objetivo ajudar as empresas a entender o comportamento do cliente e direcionar os possíveis compradores de forma mais eficaz.
+A estrutura do projeto foi organizada em um pipeline modular, projetado para ser compatível com execução em GPU. Esse pipeline abrange todas as etapas do fluxo de trabalho: desde o pré-processamento dos dados até a avaliação final do modelo. Um de seus componentes centrais é a classe `Architecture`, responsável por gerenciar de forma encapsulada todo o processo de treinamento, validação e inferência do modelo PyTorch.
+
+Como ponto de partida para o desenvolvimento, foi utilizado o repositório Customer-Purchase-Predict_ML, de autoria de Pei-Tong, que serviu como referência para a construção da solução. A classe `Architecture` foi disponibilizada pelo Prof. Ivanovitch Medeiros e utilizada neste projeto.
+
+O objetivo final da solução é oferecer suporte à tomada de decisão empresarial, permitindo que estratégias de marketing sejam direcionadas de forma mais eficiente, com base na análise do comportamento do consumidor.
 
 ## 📂 Dataset
 - Fonte: [Kaggle - Predict Customer Purchase Behavior](https://www.kaggle.com/datasets/rabieelkharoua/predict-customer-purchase-behavior-dataset/data)
@@ -83,12 +87,12 @@ Já a curva Precision-Recall mostra que o modelo mantém, em grande parte, uma p
 
 De forma geral, todo o fluxo — desde a definição da arquitetura até o treinamento e avaliação — foi estruturado com foco em modularidade, reprodutibilidade e facilidade de reaproveitamento.
 
-## Referências
+## 🔗 Referências
 
 - [Kaggle - Predict Customer Purchase Behavior](https://www.kaggle.com/datasets/rabieelkharoua/predict-customer-purchase-behavior-dataset/data)
 - [Repositório do Prof Dr. Ivanovitch](https://github.com/ivanovitchm/PPGEEC2318)
 
-## Colaboradores
+## 👥 Colaboradores
 - Adson Emanuel
 - Klyfton Stanley
 
