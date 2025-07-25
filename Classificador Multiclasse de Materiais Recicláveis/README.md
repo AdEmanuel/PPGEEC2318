@@ -10,11 +10,13 @@ O projeto foi desenvolvido como parte da avaliação final da disciplina PPGEEC2
 
 ## 📂 Dataset
 
-O conjunto de dados utilizado é uma adaptação do TrashNet: A set of annotated images of trash that can be used for object detection Dataset, desenvolvido pelo Polygence Project e disponibilizado na plataforma Roboflow.
+O conjunto de dados utilizado é uma adaptação do `TrashNet: A set of annotated images of trash that can be used for object detection Dataset`, desenvolvido pelo Polygence Project e disponibilizado na plataforma Roboflow.
 
 Embora o dataset original contenha seis classes (cardboard, glass, metal, paper, plastic e trash), este projeto considera apenas as quatro categorias relacionadas à coleta seletiva: glass, metal, paper e plastic.
 
-Foram utilizadas 400 imagens de treinamento e 100 imagens de validação para cada classe, em que cada uma delas tem 512x384 pixels. 
+Foram utilizadas 400 imagens de treinamento e 100 imagens de validação para cada classe, em que cada uma delas tem 512x384 pixels. A Figura a seguir contém uma imagem de cada classe presente no dataset.
+
+<p align="center"> <img src="Classificador Multiclasse de Materiais Recicláveis/imagens/ex_imagens_dataset.png" alt="Exemplos de imagens presentes no dataset" width="450"> </p>
 
 ## Arquitetura e Desenvolvimento dos Modelos
 
