@@ -16,7 +16,7 @@ Embora o dataset original contenha seis classes (cardboard, glass, metal, paper,
 
 Foram utilizadas 400 imagens de treinamento e 100 imagens de validação para cada classe, em que cada uma delas tem 512x384 pixels. A Figura a seguir contém uma imagem de cada classe presente no dataset.
 
-<p align="center"> <img src="[Classificador Multiclasse de Materiais Recicláveis/imagens/ex_imagens_dataset.png.jpeg](https://raw.githubusercontent.com/AdEmanuel/PPGEEC2318/refs/heads/main/Classificador%20Multiclasse%20de%20Materiais%20Recicl%C3%A1veis/imagens/ex_imagens_dataset.png)" alt="Exemplos de imagens presentes no dataset" width="450"> </p>
+<p align="center"> <img src="Classificador Multiclasse de Materiais Recicláveis/imagens/ex_imagens_dataset.png.jpeg" alt="Exemplos de imagens presentes no dataset" width="450"> </p>
 
 ## Arquitetura e Desenvolvimento dos Modelos
 
