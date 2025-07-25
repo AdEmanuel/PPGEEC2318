@@ -36,8 +36,7 @@ A arquitetura da rede consiste em uma CNN sequencial com a seguinte estrutura:
 
 Para entender o comportamento interno da rede, foram utilizados filtros e hooks. Os filtros da primeira camada convolucional (conv1), foram visualizados para inspecionar os tipos de características que o modelo aprendia a detectar nos estágios iniciais (ex: bordas, texturas e padrões simples). Ao passo que os filtros da segunda camada (conv2) aprendem a combinar essas características simples para identificar padrões mais complexos e abstratos, como texturas específicas de cada material ou formas mais definidas.
 
-[IMAGEM DOS FILTROS DA CAMADA CONV1 DO MODELO BASE]
-Figura: Visualização dos 5 filtros da primeira camada convolucional do Modelo Base.
+<p align="center"> <img src="Classificador Multiclasse de Materiais Recicláveis/imagens/modelobase/filter_conv1_modelbase.png" alt="FiltrosConv1" width="450"> </p>
 
 [IMAGEM DOS FILTROS DA CAMADA CONV1 DO MODELO BASE]
 Figura: Visualização dos 5 filtros da segunda camada convolucional do Modelo Base.
