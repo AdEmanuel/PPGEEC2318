@@ -20,11 +20,11 @@ Foram utilizadas 400 imagens de treinamento e 100 imagens de validação para ca
   <img src="imagens/ex_imagens_dataset.png" alt="Exemplos de imagens presentes no dataset" width="450">
 </p>
 
-## Arquitetura e Desenvolvimento dos Modelos
+## 💡Arquitetura e Desenvolvimento dos Modelos
 
 A metodologia utilizada consistiu na implementação de dois modelos CNN (modelo base e modelo pessoal), buscando observar como alterações na arquitetura e no learning rate afetam no desempenho da classificação.
 
-### Modelo Base
+### 🧱 Modelo Base
 
 Este modelo, implementado no arquivo `ClassifierModelBase.ipynb`, utiliza uma arquitetura baseada no material de aula disponibilizado pelo professor. No pré-processamento, as imagens passaram apenas pelas transformações essenciais de redimensionamento (para o tamanho esperado pela rede) e conversão para o formato de tensor PyTorch.
 
@@ -48,7 +48,7 @@ Já os hooks foram utilizados para visualizar a transformação das imagens ao l
 
 <p align="center"> <img src="imagens/modelobase/features_map_classifier_modelbase.png" alt="hook2" width="450"> </p>
 
-### Modelo Pessoal
+### 🚀 Modelo Pessoal
 
 Partindo da análise do modelo anterior, foi desenvolvido o `ClassifierPersonalModel.ipynb`. Este modelo aplica alterações na preparação dos dados e na arquitetura da rede com o objetivo de construir uma rede mais robusta, capaz de aprender características mais detalhadas das imagens.
 
@@ -76,7 +76,7 @@ A escolha dos valores para n_feature, dropout e learning rate foi feita com o au
 
 Essa abordagem resultou em um modelo mais eficiente, com ganhos visíveis na curva de perda. Dessa forma, a figura a seguir mostra que as perdas de treinamento e validação caem progressivamente até cerca da 15ª época, atingindo valores em torno de 0.55. Após esse ponto, a perda de validação apresenta certa oscilação, sinalizando um início de overfitting leve, mas ainda assim mantém desempenho superior ao modelo base. O comportamento geral da curva reflete um aprendizado mais consistente e uma maior capacidade de generalização.
 
-<p align="center"> <img src="imagens/modelobase/grafico_de_perdas_modelopessoal.png" alt="CurvaDePerda_modelopessoal" width="450"> </p>
+<p align="center"> <img src="imagens/modelopessoal/grafico_de_perdas_modelopessoal.png" alt="CurvaDePerda_modelopessoal" width="450"> </p>
 
 Quanto às métricas de desempenho, a tabela evidencia uma melhora significativa em relação ao modelo base. O Modelo Pessoal atingiu cerca de 74% de acurácia, com precision, recall e f1-score mais equilibrados entre as classes, refletindo um desempenho mais consistente.
 
@@ -85,25 +85,33 @@ Quanto às métricas de desempenho, a tabela evidencia uma melhora significativa
 | Modelo Base    |    50,75%    |     50,93%    |    50,75%   |    50,42%    |
 | Modelo Pessoal |    74,75%    |     76,42%    |    74,75%   |    74,30%    |
 
-As matrizes de confusão confirmam essa evolução, mostrando maior concentração de acertos na diagonal principal e redução nos erros de classificação. Isso indica que o modelo foi mais eficaz em distinguir corretamente entre as quatro classes.
+As matrizes de confusão (do modelo base e modelo pessoal, respectivamente) confirmam essa evolução, mostrando maior concentração de acertos na diagonal principal e redução nos erros de classificação. Isso indica que o modelo foi mais eficaz em distinguir corretamente entre as quatro classes.
 
-MATRIZES DE CONFUSÃO
+<p align="center"> <img src="imagens/modelobase/matriz_confusao_modelbase.png" alt="MatrizConfusao_modelbase" width="450"> </p>
+
+<p align="center"> <img src="imagens/modelopessoal/matriz_confusao_modelopessoal.png" alt="MatrizConfusao_modelopessoal" width="450"> </p>
 
 Esses resultados comprovam que a nova arquitetura e a otimização dos hiperparâmetros contribuíram para uma melhor generalização e precisão.
 
-## Análise de Learning Rate
+## 📈 Análise de Learning Rate
 
-Para refinar ainda mais o "Modelo Pessoal", foi utilizada a técnica Learning Rate Finder (LRFinder). O LRFinder treina o modelo por algumas iterações, começando com uma taxa de aprendizado (LR) muito baixa e aumentando-a exponencialmente a cada passo. Ao plotar a perda em função do LR, é possível identificar a faixa de valores onde a perda diminui mais rapidamente, indicando uma taxa de aprendizado ideal. A imagem a seguir é a gráfico do LR aplicado ao modelo pessoal.
+Para refinar ainda mais o "Modelo Pessoal", foi utilizada a técnica Learning Rate Finder (LRFinder). O LRFinder treina o modelo por algumas iterações, começando com uma taxa de aprendizado (LR) muito baixa e aumentando-a exponencialmente a cada passo. Ao plotar a perda em função do LR, é possível identificar a faixa de valores onde a perda diminui mais rapidamente, indicando uma taxa de aprendizado ideal. A imagem a seguir é o gráfico do LR aplicado ao modelo pessoal.
 
-Figura: Gráfico de Perda vs. Taxa de Aprendizado gerado pelo LRFinder.
+<p align="center"> <img src="imagens/LRFinder/grafico_LRFinder.png" alt="grafico_LRFinder" width="450"> </p>
 
 Com base na sugestão do LRFinder o valor de learning rate 4.33e-04 foi selecionado e aplicado para treinar novamente o modelo. O desempenho desta nova versão foi avaliado por meio do gráfico de perda e da matriz de confusão, apresentados a seguir.
 
-FOTO LOSS FUNCTION E MATRIZ DE CONFUSÃO.
+<p align="center"> <img src="imagens/LRFinder/grafico_de_perdas_LRFinder.png" alt="grafico_de_perdas_LRFinder" width="450"> </p>
 
-Como é possível observas na imagens, a aplicação da taxa de aprendizado sugerida pelo LRFinder resultou em um desempenho ligeiramente inferior ao do modelo com o learning rate ajustado manualmente.
+<p align="center"> <img src="imagens/LRFinder/matriz_confusao_LRFinder.png" alt="MatrizConfusao_LRFinder" width="450"> </p>
 
-## Conclusão
+Como é possível observas nas imagens, a aplicação da taxa de aprendizado sugerida pelo LRFinder resultou em um desempenho ligeiramente inferior ao do modelo apresentado anteriormente.
+
+## 🏁 Conclusões
+
+O desenvolvimento deste projeto evidenciou a importância da escolha adequada de arquiteturas e da otimização de hiperparâmetros no desempenho de modelos de classificação baseados em redes neurais. Por meio de ajustes no Modelo Pessoal, foi possível alcançar métricas superiores em relação ao Modelo Base, demonstrando maior capacidade de generalização e discriminação entre as classes.
+
+Durante o processo de ajuste, foi utilizada a técnica learning rate finder como alternativa para definição da taxa de aprendizado. Embora os resultados não tenham sido melhores neste caso específico, a abordagem se mostra válida como ponto de partida para ajustes posteriores mais refinados.
 
 ## 🔗 Referências
 
