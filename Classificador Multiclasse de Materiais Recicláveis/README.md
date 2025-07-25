@@ -87,7 +87,9 @@ Quanto às métricas de desempenho, a tabela evidencia uma melhora significativa
 
 As matrizes de confusão confirmam essa evolução, mostrando maior concentração de acertos na diagonal principal e redução nos erros de classificação. Isso indica que o modelo foi mais eficaz em distinguir corretamente entre as quatro classes.
 
-MATRIZES DE CONFUSÃO
+<p align="center"> <img src="imagens/modelobase/matriz_confusao_modelbase.png" alt="matrizconf1" width="450"> </p>
+
+<p align="center"> <img src="imagens/modelpessoal/matriz_confusao_modelopessoal.png" alt="matrizconf2" width="450"> </p>
 
 Esses resultados comprovam que a nova arquitetura e a otimização dos hiperparâmetros contribuíram para uma melhor generalização e precisão.
 
@@ -95,15 +97,21 @@ Esses resultados comprovam que a nova arquitetura e a otimização dos hiperpar�
 
 Para refinar ainda mais o "Modelo Pessoal", foi utilizada a técnica Learning Rate Finder (LRFinder). O LRFinder treina o modelo por algumas iterações, começando com uma taxa de aprendizado (LR) muito baixa e aumentando-a exponencialmente a cada passo. Ao plotar a perda em função do LR, é possível identificar a faixa de valores onde a perda diminui mais rapidamente, indicando uma taxa de aprendizado ideal. A imagem a seguir é a gráfico do LR aplicado ao modelo pessoal.
 
-Figura: Gráfico de Perda vs. Taxa de Aprendizado gerado pelo LRFinder.
+<p align="center"> <img src="imagens/LRFinder/grafico_LRFinder.png" alt="lrf_findere" width="450"> </p>
 
 Com base na sugestão do LRFinder o valor de learning rate 4.33e-04 foi selecionado e aplicado para treinar novamente o modelo. O desempenho desta nova versão foi avaliado por meio do gráfico de perda e da matriz de confusão, apresentados a seguir.
 
-FOTO LOSS FUNCTION E MATRIZ DE CONFUSÃO.
+<p align="center"> <img src="imagens/LRFinder/grafico_de_perdas_LRFinder.png" alt="lrf_finder2" width="450"> </p>
+
+<p align="center"> <img src="imagens/LRFinder/matriz_confusao_LRFinder.png" alt="lrf_finder3" width="450"> </p>
 
 Como é possível observas na imagens, a aplicação da taxa de aprendizado sugerida pelo LRFinder resultou em um desempenho ligeiramente inferior ao do modelo com o learning rate ajustado manualmente.
 
 ## Conclusão
+
+O desenvolvimento deste projeto evidenciou a importância da escolha adequada de arquiteturas e da otimização de hiperparâmetros no desempenho de modelos de classificação baseados em redes neurais. Por meio de ajustes no Modelo Pessoal, foi possível alcançar métricas superiores em relação ao Modelo Base, demonstrando maior capacidade de generalização e discriminação entre as classes.
+
+Durante o processo de ajuste, foi utilizada a técnica learning rate finder como alternativa para definição da taxa de aprendizado. Embora os resultados iniciais não tenham sido os mais ideais neste caso específico, a abordagem ainda se mostra válida como ponto de partida para ajustes posteriores mais refinados.
 
 ## 🔗 Referências
 
