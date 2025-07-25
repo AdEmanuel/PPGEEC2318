@@ -76,7 +76,7 @@ Para o treinamento do Modelo Pessoal, foram utilizadas 32 features na primeira c
 
 Essa abordagem resultou em um modelo mais eficiente, com ganhos visíveis na curva de perda. Dessa forma, a figura a seguir mostra que as perdas de treinamento e validação caem progressivamente até cerca da 15ª época, atingindo valores em torno de 0.55. Após esse ponto, a perda de validação apresenta certa oscilação, sinalizando um início de overfitting leve, mas ainda assim mantém desempenho superior ao modelo base. O comportamento geral da curva reflete um aprendizado mais consistente e uma maior capacidade de generalização.
 
-<p align="center"> <img src="imagens/modelobase/grafico_de_perdas_modelopessoal.png" alt="CurvaDePerda_modelopessoal" width="450"> </p>
+<p align="center"> <img src="imagens/modelopessoal/grafico_de_perdas_modelopessoal.png" alt="CurvaDePerda_modelopessoal" width="450"> </p>
 
 Quanto às métricas de desempenho, a tabela evidencia uma melhora significativa do modelo pessoal em relação ao modelo base, onde o primeiro atingiu cerca de 74% de acurácia, com precision, recall e f1-score mais equilibrados entre as classes, refletindo um desempenho mais consistente.
 
