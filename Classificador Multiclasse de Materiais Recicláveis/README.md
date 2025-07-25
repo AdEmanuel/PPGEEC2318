@@ -89,7 +89,7 @@ As matrizes de confusão confirmam essa evolução, mostrando maior concentraç�
 
 <p align="center"> <img src="imagens/modelobase/matriz_confusao_modelbase.png" alt="matrizconf1" width="450"> </p>
 
-<p align="center"> <img src="imagens/modelpessoal/matriz_confusao_modelopessoal.png" alt="matrizconf2" width="450"> </p>
+<p align="center"> <img src="imagens/modelopessoal/matriz_confusao_modelopessoal.png" alt="matrizconf2" width="450"> </p>
 
 Esses resultados comprovam que a nova arquitetura e a otimização dos hiperparâmetros contribuíram para uma melhor generalização e precisão.
 
