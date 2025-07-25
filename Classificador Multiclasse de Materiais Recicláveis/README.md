@@ -30,8 +30,6 @@ A arquitetura da rede consiste em uma CNN sequencial com a seguinte estrutura:
 - Bloco Convolucional 2: Uma camada Conv2d com 32 filtros, também seguida por ReLU e MaxPool2d.
 - Classificador: Duas camadas lineares (Linear) para realizar a classificação final nas quatro categorias.
 
-Para o treinamento, utilizou-se a função de perda Cross-Entropy Loss (nn.CrossEntropyLoss) e o otimizador Adam com uma taxa de aprendizado (learning rate) de 3e-4, ao longo de 10 épocas.
-
 -> 🔍 Visualizações: Filtros e Hooks
 
 Para entender o comportamento interno da rede, foram utilizados filtros e hooks. Os filtros da primeira camada convolucional (conv1), foram visualizados para inspecionar os tipos de características que o modelo aprendia a detectar nos estágios iniciais (ex: bordas, texturas e padrões simples). Ao passo que os filtros da segunda camada (conv2) aprendem a combinar essas características simples para identificar padrões mais complexos e abstratos, como texturas específicas de cada material ou formas mais definidas.
@@ -58,7 +56,45 @@ As principais modificações introduzidas neste modelo foram:
 
 - Adição de Camadas de Regularização e Estabilização: Para gerenciar a maior complexidade da rede e mitigar o risco de overfitting, foram adicionadas camadas de BatchNorm2d após cada convolução para estabilizar o treinamento, e camadas de Dropout nas etapas finais do classificador.
 
-## Resultados
+## 📊 Resultados e Desempenho
+
+Para o treinamento do Modelo Base, foi utilizado um número inicial de 5 filtros na primeira camada convolucional. A função de perda adotada foi a Cross-Entropy Loss (nn.CrossEntropyLoss), combinada com o otimizador Adam e uma taxa de aprendizado (learning rate) de 3e-4. O treinamento foi realizado ao longo de 10 épocas.
+
+A figura a seguir apresenta a curva de perda durante o treinamento, mostrando a evolução das perdas de treinamento (em azul) e validação (em vermelho). Ambas iniciam com valores em torno de 1.37 e apresentam uma queda constante ao longo das épocas, alcançando aproximadamente 1.18 ao final do processo. Esse comportamento indica um aprendizado estável e sem overfitting. No entanto, os valores finais ainda relativamente altos sugerem que o Modelo Base possui limitações na extração de padrões mais representativos, motivando o desenvolvimento de arquiteturas mais complexas nos modelos seguintes.
+
+[IMAGEM do gráfico de perdas]
+Figura: Gráfico de perdas do modelo base.
+
+Para o treinamento do Modelo Pessoal com Hiperparâmetros Otimizados, foram utilizadas 32 features na primeira camada convolucional e taxa de dropout de 0.18, com o objetivo de aumentar a capacidade de generalização da rede. A função de perda adotada foi novamente a Cross-Entropy Loss com média (reduction='mean'), e o otimizador escolhido foi o Adam, agora com uma taxa de aprendizado ajustada para aproximadamente 7.35e-5 e regularização L2 (weight decay) de 1e-4. O modelo foi treinado por 31 épocas.
+
+A escolha dos valores para n_feature, dropout e learning rate foi feita com o auxílio da biblioteca Optuna, uma ferramenta de otimização automática de hiperparâmetros baseada em estudos de tentativa e erro inteligentes (study-based optimization). O Optuna executa diversas combinações possíveis e utiliza algoritmos como Tree-structured Parzen Estimator (TPE) para identificar os melhores conjuntos de hiperparâmetros com base no desempenho do modelo em métricas definidas.
+
+Essa abordagem resultou em um modelo mais eficiente, com ganhos visíveis tanto na curva de perda. Dessa forma, a figura mostra que as perdas de treinamento e validação caem progressivamente até cerca da 15ª época, atingindo valores em torno de 0.55. Após esse ponto, a perda de validação apresenta certa oscilação, sinalizando um início de overfitting leve, mas ainda assim mantém desempenho superior ao modelo base. O comportamento geral da curva reflete um aprendizado mais consistente e uma maior capacidade de generalização.
+
+[IMAGEM do gráfico de perdas]
+Figura: Gráfico de perdas do modelo base.
+
+Quanto às métricas de desempenho, a tabela evidencia uma melhora significativa em relação ao modelo base. O Modelo Pessoal atingiu cerca de 74% de acurácia, com precision, recall e f1-score mais equilibrados entre as classes, refletindo um desempenho mais consistente.
+
+TABELA
+
+As matrizes de confusão confirmam essa evolução, mostrando maior concentração de acertos na diagonal principal e redução nos erros de classificação. Isso indica que o modelo foi mais eficaz em distinguir corretamente entre as quatro classes.
+
+MATRIZES DE CONFUSÃO
+
+Esses resultados comprovam que a nova arquitetura e a otimização dos hiperparâmetros contribuíram para uma melhor generalização e precisão.
+
+## Análise de Learning Rate
+
+Para refinar ainda mais o "Modelo Pessoal", foi utilizada a técnica Learning Rate Finder (LRFinder). O LRFinder treina o modelo por algumas iterações, começando com uma taxa de aprendizado (LR) muito baixa e aumentando-a exponencialmente a cada passo. Ao plotar a perda em função do LR, é possível identificar a faixa de valores onde a perda diminui mais rapidamente, indicando uma taxa de aprendizado ideal. A imagem a seguir é a gráfico do LR aplicado ao modelo pessoal.
+
+Figura: Gráfico de Perda vs. Taxa de Aprendizado gerado pelo LRFinder.
+
+Com base na sugestão do LRFinder o valor de learning rate 4.33e-04 foi selecionado e aplicado para treinar novamente o modelo. O desempenho desta nova versão foi avaliado por meio do gráfico de perda e da matriz de confusão, apresentados a seguir.
+
+FOTO LOSS FUNCTION E MATRIZ DE CONFUSÃO.
+
+Como é possível observas na imagens, a aplicação da taxa de aprendizado sugerida pelo LRFinder resultou em um desempenho ligeiramente inferior ao do modelo com o learning rate ajustado manualmente.
 
 ## Conclusão
 
